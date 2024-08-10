@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export const dbConnection=()=>{
+ const dbConnection=()=>{
     mongoose.connect(process.env.MONGO_URL,{dbName : "MERN_STACK_Event_Planning"})
     .then(()=>{
         console.log("connection connected to database");
@@ -9,3 +9,5 @@ export const dbConnection=()=>{
         console.log("connection not created to database",err);
     });
 };
+
+export default dbConnection
